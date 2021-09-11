@@ -13,6 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        if (app()->isLocal()) {
+            $this->call([
+                PMSeeder::class,
+                TestingSeeder::class
+            ]);
+        } else {
+            $this->call([
+                PMSeeder::class
+            ]);
+        }
     }
 }
