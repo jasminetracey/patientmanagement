@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Enums\Roles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,6 +22,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'role',
+        'last_login_at',
+        'last_login_ip',
     ];
 
     /**
@@ -41,4 +45,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isDoctor()
+    {
+        return $this->role === Roles::DOCTOR;
+    }
+
+    public function scopeWhereDoctor($query)
+    {
+        return $query->where('role', Roles::DOCTOR);
+    }
 }

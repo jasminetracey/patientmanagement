@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Button from '@/Components/Button';
-import Checkbox from '@/Components/Checkbox';
+import Checkbox from '@/Components/Form/Checkbox';
 import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import Label from '@/Components/Label';
-import ValidationErrors from '@/Components/ValidationErrors';
+import Input from '@/Components/Form/Input';
+import Label from '@/Components/Form/Label';
+import ValidationErrors from '@/Components/Form/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
 export default function Login({ status, canResetPassword }) {

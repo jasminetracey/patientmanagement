@@ -4,7 +4,7 @@ namespace App\Models\Enums;
 
 class Roles
 {
-    public const PATIENT = 'Patient';
+    public const PATIENT = 'patient';
 
-    public const DOCTOR = 'Doctor';
+    public const DOCTOR = 'doctor';
 }

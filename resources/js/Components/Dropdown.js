@@ -73,7 +73,19 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-whit
     );
 };
 
-const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
+const DropdownLink = ({ href, as = 'a', children }) => {
+    return (
+        <Link
+            href={href}
+            as={as}
+            className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+        >
+            {children}
+        </Link>
+    );
+};
+
+const DropdownButton = ({ href, method = "post", as = "a", children }) => {
     return (
         <Link
             href={href}
@@ -89,5 +101,6 @@ const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
 Dropdown.Trigger = Trigger;
 Dropdown.Content = Content;
 Dropdown.Link = DropdownLink;
+Dropdown.Button = DropdownButton;
 
 export default Dropdown;

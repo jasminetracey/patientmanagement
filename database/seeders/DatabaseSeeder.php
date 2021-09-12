@@ -13,15 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if (app()->isLocal()) {
-            $this->call([
-                PMSeeder::class,
-                TestingSeeder::class
-            ]);
-        } else {
-            $this->call([
-                PMSeeder::class
-            ]);
-        }
+        $this->call([
+            PMSeeder::class
+        ]);
     }
 }

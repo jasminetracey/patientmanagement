@@ -32,5 +32,12 @@ class PMSeeder extends Seeder
                 'role' => Roles::DOCTOR
             ])->create();
         }
+
+        User::factory()
+            ->state([
+                'role' => Roles::DOCTOR
+            ])
+            ->count(10)
+            ->create();
     }
 }
