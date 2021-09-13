@@ -8,6 +8,12 @@
 - node.js 
 - Mysql 8 and greater
 
+## Frameworks
+
+- Laravel
+- Inertia
+- React
+
 ## Installation
 
 ### Step 1: Clone this repo to get started.
