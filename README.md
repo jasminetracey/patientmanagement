@@ -2,6 +2,18 @@
 
 - [Demo Site](http://patientmanagement21.herokuapp.com)
 
+```
+Patient User
+email: patient@example.com
+password: password
+```
+
+```
+Doctor User 
+email: doctor@example.com
+password: password
+```
+
 ## Machine Requirement
 
 - PHP 8.0 and greater
