@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\PhoneNumber;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -18,11 +19,17 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
-            'name' => ['required', 'max:50'],
+            'name' => 'required|max:50',
             'email' => [
                 'required', 'max:50', 'email',
                 Rule::unique('users')->ignore(auth()->user()->id)
             ],
+            'dob' => 'required|date|before:today',
+            'phone_number' => ['required', new PhoneNumber()],
+            'address' => 'required',
+            'next_of_kin_name' => 'required',
+            'next_of_kin_relationship' => 'required',
+            'next_of_kin_phone_number' => ['required', new PhoneNumber()]
         ]);
 
         auth()->user()->update($validated);

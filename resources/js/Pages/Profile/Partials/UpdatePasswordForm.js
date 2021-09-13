@@ -10,6 +10,7 @@ export default function UpdatePasswordForm() {
         current_password: "",
         password: "",
         password_confirmation: "",
+        _method: "PUT",
     });
 
     useEffect(() => {

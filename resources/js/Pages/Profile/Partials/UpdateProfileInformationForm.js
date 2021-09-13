@@ -9,6 +9,12 @@ export default function UpdateProfileInformationForm({ user }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: user.name || "",
         email: user.email || "",
+        dob: user.dob || "",
+        phone_number: user.phone_number || "",
+        address: user.address || "",
+        next_of_kin_name: user.next_of_kin_name || "",
+        next_of_kin_relationship: user.next_of_kin_relationship || "",
+        next_of_kin_phone_number: user.next_of_kin_phone_number || "",
         _method: "PUT",
     });
 
@@ -47,8 +53,6 @@ export default function UpdateProfileInformationForm({ user }) {
                                 name="name"
                                 value={data.name}
                                 className="mt-1 block w-full"
-                                autoComplete="name"
-                                isFocused={true}
                                 handleChange={onHandleChange}
                                 required
                             />
@@ -62,9 +66,100 @@ export default function UpdateProfileInformationForm({ user }) {
                                 name="email"
                                 value={data.email}
                                 className="mt-1 block w-full"
-                                autoComplete="username"
                                 handleChange={onHandleChange}
                                 required
+                            />
+                        </div>
+
+                        <div>
+                            <Label forInput="dob" value="Date of Birth" />
+
+                            <Input
+                                type="date"
+                                name="dob"
+                                value={data.dob}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <Label
+                                forInput="phone_number"
+                                value="Phone Number"
+                            />
+
+                            <Input
+                                type="tel"
+                                name="phone_number"
+                                value={data.phone_number}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                                placeholder="000-000-0000"
+                            />
+                        </div>
+
+                        <div>
+                            <Label forInput="address" value="Address" />
+
+                            <Input
+                                type="text"
+                                name="address"
+                                value={data.address}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <Label
+                                forInput="next_of_kin_name"
+                                value="Next of Kin Full Name"
+                            />
+
+                            <Input
+                                type="text"
+                                name="next_of_kin_name"
+                                value={data.next_of_kin_name}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <Label
+                                forInput="next_of_kin_relationship"
+                                value="Next of Kin Relationship"
+                            />
+
+                            <Input
+                                type="text"
+                                name="next_of_kin_relationship"
+                                value={data.next_of_kin_relationship}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <Label
+                                forInput="next_of_kin_phone_number"
+                                value="Next of Kin Phone Number"
+                            />
+
+                            <Input
+                                type="tel"
+                                name="next_of_kin_phone_number"
+                                value={data.next_of_kin_phone_number}
+                                className="mt-1 block w-full"
+                                handleChange={onHandleChange}
+                                required
+                                placeholder="000-000-0000"
                             />
                         </div>
 

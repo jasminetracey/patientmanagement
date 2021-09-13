@@ -19,7 +19,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])
         ->name('profile.delete');
 
-    Route::post('/password/change', [PasswordController::class, 'update'])
+    Route::put('/password/change', [PasswordController::class, 'update'])
         ->name('password.change');
 
     Route::post('/appointment', [AppointmentController::class, 'store'])

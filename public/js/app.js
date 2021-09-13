@@ -3633,7 +3633,9 @@ function Input(_ref) {
       autoComplete = _ref.autoComplete,
       required = _ref.required,
       isFocused = _ref.isFocused,
-      handleChange = _ref.handleChange;
+      handleChange = _ref.handleChange,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? "" : _ref$placeholder;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
@@ -3652,7 +3654,8 @@ function Input(_ref) {
       required: required,
       onChange: function onChange(e) {
         return handleChange(e);
-      }
+      },
+      placeholder: placeholder
     })
   });
 }
@@ -5232,7 +5235,8 @@ function UpdatePasswordForm() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     current_password: "",
     password: "",
-    password_confirmation: ""
+    password_confirmation: "",
+    _method: "PUT"
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -5358,6 +5362,12 @@ function UpdateProfileInformationForm(_ref) {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     name: user.name || "",
     email: user.email || "",
+    dob: user.dob || "",
+    phone_number: user.phone_number || "",
+    address: user.address || "",
+    next_of_kin_name: user.next_of_kin_name || "",
+    next_of_kin_relationship: user.next_of_kin_relationship || "",
+    next_of_kin_phone_number: user.next_of_kin_phone_number || "",
     _method: "PUT"
   }),
       data = _useForm.data,
@@ -5408,8 +5418,6 @@ function UpdateProfileInformationForm(_ref) {
               name: "name",
               value: data.name,
               className: "mt-1 block w-full",
-              autoComplete: "name",
-              isFocused: true,
               handleChange: onHandleChange,
               required: true
             })]
@@ -5422,9 +5430,82 @@ function UpdateProfileInformationForm(_ref) {
               name: "email",
               value: data.email,
               className: "mt-1 block w-full",
-              autoComplete: "username",
               handleChange: onHandleChange,
               required: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "dob",
+              value: "Date of Birth"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "date",
+              name: "dob",
+              value: data.dob,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "phone_number",
+              value: "Phone Number"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "tel",
+              name: "phone_number",
+              value: data.phone_number,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true,
+              placeholder: "000-000-0000"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "address",
+              value: "Address"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "text",
+              name: "address",
+              value: data.address,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "next_of_kin_name",
+              value: "Next of Kin Full Name"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "text",
+              name: "next_of_kin_name",
+              value: data.next_of_kin_name,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "next_of_kin_relationship",
+              value: "Next of Kin Relationship"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "text",
+              name: "next_of_kin_relationship",
+              value: data.next_of_kin_relationship,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              forInput: "next_of_kin_phone_number",
+              value: "Next of Kin Phone Number"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Form_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              type: "tel",
+              name: "next_of_kin_phone_number",
+              value: data.next_of_kin_phone_number,
+              className: "mt-1 block w-full",
+              handleChange: onHandleChange,
+              required: true,
+              placeholder: "000-000-0000"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             processing: processing,

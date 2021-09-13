@@ -25,6 +25,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'role',
         'last_login_at',
         'last_login_ip',
+        'dob',
+        'phone_number',
+        'address',
+        'next_of_kin_name',
+        'next_of_kin_relationship',
+        'next_of_kin_phone_number'
     ];
 
     /**
@@ -48,11 +54,21 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isDoctor()
     {
-        return $this->role === Roles::DOCTOR;
+        return $this->role == Roles::DOCTOR;
     }
 
     public function scopeWhereDoctor($query)
     {
         return $query->where('role', Roles::DOCTOR);
+    }
+
+    public function appointmentsPatient()
+    {
+       return $this->hasMany(Appointment::class, 'patient_id');
+    }
+
+    public function appointmentsDoctor()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
     }
 }

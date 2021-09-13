@@ -9,6 +9,7 @@ export default function Input({
     required,
     isFocused,
     handleChange,
+    placeholder = ""
 }) {
     const input = useRef();
 
@@ -32,6 +33,7 @@ export default function Input({
                 autoComplete={autoComplete}
                 required={required}
                 onChange={(e) => handleChange(e)}
+                placeholder={placeholder}
             />
         </div>
     );
